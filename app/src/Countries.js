@@ -7,22 +7,17 @@ class CountriesList extends Component {
     super(props);
     this.state = {
       countries: null,
-      names: null
     };
   }
 
-  setNames(data) {
-    this.setState({ names: data.map(elem => elem.name) });
-  }
-
   createDivs() {
-    if (!this.state.names) {
+    if (!this.state.countries) {
       return [];
     }
     let divs = [];
-    divs = this.state.names.map((element, index) => (
+    divs = this.state.countries.map((element, index) => (
       <tr key={index}>
-        <td>{element}</td>
+        <td>{element.name}</td>
       </tr>
     ));
     return divs;
@@ -33,7 +28,6 @@ class CountriesList extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ countries: data });
-        this.setNames(data);
       });
   }
 
