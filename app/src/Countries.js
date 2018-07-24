@@ -21,7 +21,9 @@ class CountriesList extends Component {
     }
     let divs = [];
     divs = this.state.names.map((element, index) => (
-      <li key={index}>{element}</li>
+      <tr key={index}>
+        <td>{element}</td>
+      </tr>
     ));
     return divs;
   }
@@ -37,7 +39,11 @@ class CountriesList extends Component {
 
   render() {
     // return <div>Countries {JSON.stringify(this.state.countries)} </div>;
-    return <ul>{this.createDivs()}</ul>;
+    return (
+      <table>
+        <tbody>{this.createDivs()}</tbody>
+      </table>
+    );
   }
 }
 
