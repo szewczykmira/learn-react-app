@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Country from "./Country.js";
 
 const API_URL = "https://restcountries.eu/rest/v2/all";
 
@@ -6,7 +7,7 @@ class CountriesList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      countries: null,
+      countries: null
     };
   }
 
@@ -16,9 +17,7 @@ class CountriesList extends Component {
     }
     let divs = [];
     divs = this.state.countries.map((element, index) => (
-      <tr key={index}>
-        <td>{element.name}</td>
-      </tr>
+      <Country name={element.name} key={index} />
     ));
     return divs;
   }
