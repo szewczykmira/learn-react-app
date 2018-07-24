@@ -15,6 +15,17 @@ class CountriesList extends Component {
     this.setState({ names: data.map(elem => elem.name) });
   }
 
+  createDivs() {
+    if (!this.state.names) {
+      return [];
+    }
+    let divs = [];
+    divs = this.state.names.map((element, index) => (
+      <li key={index}>{element}</li>
+    ));
+    return divs;
+  }
+
   componentDidMount() {
     fetch(API_URL)
       .then(response => response.json())
@@ -26,7 +37,7 @@ class CountriesList extends Component {
 
   render() {
     // return <div>Countries {JSON.stringify(this.state.countries)} </div>;
-    return <div>Countries: {this.state.names} </div>;
+    return <ul>{this.createDivs()}</ul>;
   }
 }
 
