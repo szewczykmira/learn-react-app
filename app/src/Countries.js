@@ -35,9 +35,11 @@ class CountriesList extends Component {
     return (
       <table>
         <thead>
-          <td>Name</td>
-          <td>Capital</td>
-          <td>Flag</td>
+          <tr>
+            <th>Name</th>
+            <th>Capital</th>
+            <th>Flag</th>
+          </tr>
         </thead>
         <tbody>{this.createDivs()}</tbody>
       </table>
