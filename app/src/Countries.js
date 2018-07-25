@@ -33,8 +33,8 @@ class CountriesList extends Component {
   render() {
     // return <div>Countries {JSON.stringify(this.state.countries)} </div>;
     return (
-      <table>
-        <thead>
+      <table className="table table-bordered table-sm">
+        <thead className="thead-dark">
           <tr>
             <th>Name</th>
             <th>Capital</th>

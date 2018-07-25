@@ -8,7 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <CountriesList />
+        <div className="container">
+          <CountriesList />
+        </div>
       </div>
     );
   }
